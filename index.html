@@ -1,134 +1,438 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Резюме | xqbzz</title>
-  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Баранов Сергей Иванович | Резюме</title>
+<link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&amp;display=swap" rel="stylesheet"/>
+<style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'Rubik', sans-serif;
-      margin: 0;
-      padding: 0;
-      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-      color: #fff;
+      background: #0f172a;
+      color: #f1f5f9;
+      line-height: 1.6;
     }
     header {
-      background-color: #111;
-      text-align: center;
-      padding: 2rem 1rem;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-    }
-    h1 {
-      margin-bottom: 0.2em;
-      font-size: 2.5rem;
-    }
-    p {
-      margin: 0.3em 0;
-    }
-    section {
-      margin: 2rem auto;
-      max-width: 800px;
-      background: rgba(255,255,255,0.05);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
       padding: 2rem;
+    }
+    .photo {
+      max-width: 140px;
+      border-radius: 50%;
+      border: 3px solid #38bdf8;
+    }
+    .header-text {
+      flex: 1;
+      margin-left: 2rem;
+    }
+    .header-text h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+    .header-text p {
+      margin: 0.2rem 0;
+    }
+    .section {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 1.5rem;
+      background-color: #1e293b;
       border-radius: 15px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
-    h2 {
-      color: #00bcd4;
-      border-bottom: 2px solid #00bcd4;
-      padding-bottom: 0.3em;
+    .section h2 {
+      border-bottom: 2px solid #38bdf8;
+      margin-bottom: 1rem;
+      color: #38bdf8;
     }
-    a {
-      color: #80d8ff;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    ul {
-      padding-left: 1.2rem;
-    }
-    li {
-      margin-bottom: 0.5em;
-    }
+    ul, ol { padding-left: 1.2rem; }
+    li { margin-bottom: 0.5rem; }
     footer {
       text-align: center;
-      padding: 1rem;
-      font-size: 0.9rem;
-      background: #0d1117;
-      margin-top: 2rem;
+      padding: 2rem 1rem;
+      color: #94a3b8;
     }
-  </style>
-</head>
+    .stars {
+      color: #38bdf8;
+      font-size: 1.1rem;
+    }
+    .skills-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .skills-table h3 {
+      margin: 1rem 0 0.5rem;
+      color: #94a3b8;
+    }
+    .skill-line {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 0.4rem;
+    }
+  
+.header-container {
+  animation: fadeIn 1.5s ease-in-out;
+}
+@keyframes fadeIn {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+header {
+  display: flex;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  max-width: 600px;
+  width: 100%;
+  position: relative;
+}
+.language-switch {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+}
+.lang {
+  color: #94a3b8;
+  text-decoration: none;
+  font-weight: bold;
+}
+.photo {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #38bdf8;
+  margin-bottom: 1.5rem;
+}
+.header-text {
+  text-align: center;
+}
+.header-text h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+.header-text p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+  animation: fadeInPage 1s ease-in;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+@keyframes fadeInPage {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fade-section {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+.fade-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.main-nav {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  background: rgba(30, 41, 59, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.main-nav a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.95rem;
+}
+
+.main-nav a.active {
+  background-color: #0f172a;
+  border-radius: 6px;
+  padding: 2px 6px;
+}
+</style>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/></head>
 <body>
-  <header>
-    <h1>xqbzz</h1>
-    <p>Junior ML Engineer / Data Scientist</p>
-    <p><a href="mailto:se.bar2300@mail.ru">your.email@example.com</a> | <a href="https://github.com/xqbzz">GitHub</a> | Москва, Россия</p>
-  </header>
-
-  <section>
-    <h2>Цель</h2>
-    <p>Стремлюсь развиваться в сфере анализа данных и машинного обучения, применять свои знания для решения реальных задач и стать частью сильной инженерной команды.</p>
-  </section>
-
-  <section>
-    <h2>Образование</h2>
-    <p><strong>Московский университет имени С.Ю. Витте</strong><br>
-    Бакалавр прикладной информатики (2021–2025)</p>
-    <ul>
-      <li>Машинное обучение и анализ данных</li>
-      <li>Интеллектуальный анализ данных</li>
-      <li>Распознавание изображений</li>
-      <li>Реплицированные хранилища данных</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Навыки</h2>
-    <ul>
-      <li>Python, SQL, HTML/CSS</li>
-      <li>scikit-learn, pandas, NumPy, TensorFlow, OpenCV</li>
-      <li>Jupyter, Git, Docker, FastAPI</li>
-      <li>PostgreSQL, MongoDB</li>
-      <li>Математическая статистика, визуализация данных</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Проекты</h2>
-    <ul>
-      <li><a href="https://github.com/xqbzz/sales-data-analysis">Анализ данных о продажах</a> – EDA + визуализация сезонных трендов.</li>
-      <li><a href="https://github.com/xqbzz/image-classification-model">Классификация изображений</a> – TensorFlow + CNN, точность 92%.</li>
-      <li><a href="https://github.com/xqbzz/data-visualization-app">Веб-приложение аналитики</a> – Flask + интерактивная визуализация данных.</li>
-      <li><strong>AI Art Generator</strong> (в разработке) – генерация изображений из текста с использованием Stable Diffusion и PyQt GUI.</li>
-      <li><strong>ML Resume Ranker</strong> (планируется) – модель ранжирования резюме с использованием текстовых эмбеддингов и TF-IDF.</li>
-      <li><strong>FastAPI сервис предсказаний</strong> – API, который возвращает результат ML-модели для входных данных, пригоден для деплоя.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Опыт</h2>
-    <p><strong>Стажёр по анализу данных</strong><br>
-    МУ им. С.Ю. Витте, 2024<br>
-    - Построение ML-моделей для обработки и анализа академических данных<br>
-    - Визуализация ключевых метрик успеваемости студентов<br>
-    - Работа с Jupyter, pandas, matplotlib</p>
-  </section>
-
-  <section>
-    <h2>Дополнительно</h2>
-    <ul>
-      <li>Уровень английского: B2</li>
-      <li>Участник студенческих хакатонов и конференций</li>
-      <li>Автор курсовой на тему ансамблевых методов в ML</li>
-      <li>Разрабатываю собственные open source-проекты</li>
-    </ul>
-  </section>
-
-  <footer>
-    &copy; 2025 xqbzz | Сделано с ❤️ и Python
+<nav class="main-nav">
+<a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑</a>
+<a href="#projects">Проекты / Projects</a>
+<a href="#skills">Навыки / Skills</a>
+</nav>
+<header>
+<div class="header-container">
+<div class="language-switch">
+<a class="lang" href="#">Ru</a> | <a class="lang" href="#">En</a>
+</div>
+<img alt="Фото" class="photo" src="me.jpg"/>
+<div class="header-text">
+<h1>Баранов Сергей Иванович</h1>
+<p><strong>Junior ML Engineer / Data Scientist</strong></p>
+<p><i class="fas fa-envelope"></i> <a href="mailto:se.bar2300@mail.ru" style="color:#38bdf8">se.bar2300@mail.ru</a></p>
+<p><i class="fab fa-telegram"></i> Telegram: @xqbzz | <i class="fab fa-github"></i> GitHub: <a href="https://github.com/xqbzz" style="color:#38bdf8">xqbzz</a></p>
+<p><i class="fas fa-map-marker-alt"></i> Москва, Россия</p>
+</div>
+</div>
+</header>
+<div class="section">
+<h2>Обо мне / About Me</h2>
+<div data-lang="ru">
+<p>Недавно окончил университет, специализируюсь на машинном обучении и анализе данных. Работал с фреймворками: <strong>scikit-learn</strong>, <strong>TensorFlow</strong>, <strong>FastAPI</strong>. Практиковался в создании моделей, backend-сервисов и визуализации данных. Быстро обучаюсь и люблю разбираться в сложных задачах.</p>
+</div>
+<div data-lang="en">
+<p>Recently graduated from university with a focus on machine learning and data analysis. Worked with frameworks like <strong>scikit-learn</strong>, <strong>TensorFlow</strong>, and <strong>FastAPI</strong>. Hands-on experience in building models, backend services, and data visualization. Quick learner and enjoy tackling complex challenges.</p>
+</div>
+</div>
+<div class="section">
+<h2>Сопроводительное письмо / Cover Letter</h2>
+<div data-lang="ru">
+  <p>Я ищу команду, в которой можно не просто писать код, а расти как инженер и мыслить как исследователь. Особенно интересны проекты, где применяется машинное обучение для генерации, прогнозов или сложной аналитики — не «ради модели», а ради продукта.</p>
+  <p>Мне комфортно в команде, где уважают обратную связь, разделяют техническую эстетику и не боятся экспериментов.</p>
+  <p>Я открыт к предложениям удалённой работы или гибридного формата. Если вам нужен человек, который с интересом берётся за новые технологии и умеет доводить до результата — буду рад созвониться и познакомиться.</p>
+</div>
+<div data-lang="en">
+  <p>I'm looking for a team where I can not only write code but also grow as an engineer and think like a researcher. I'm especially interested in projects that apply machine learning for generation, prediction, or complex analytics — not “for the model,” but for the product.</p>
+  <p>I enjoy working in a team that values feedback, shares technical aesthetics, and isn’t afraid to experiment.</p>
+  <p>I'm open to remote or hybrid opportunities. If you're looking for someone curious about new technologies and driven to deliver results — I'd be glad to connect and talk!</p>
+</div>
+<div class="section">
+<h2>Опыт работы / Work Experience</h2>
+<div data-lang="ru">
+<p><strong>Стажёр по анализу данных</strong>, МУ им. С.Ю. Витте — 2024</p>
+<ul>
+<li>Разработка ML-моделей для обработки студенческих данных</li>
+<li>Визуализация ключевых показателей в matplotlib</li>
+<li>Работа с Jupyter, pandas</li>
+</ul>
+</div>
+<div data-lang="en">
+<p><strong>Data Analysis Intern</strong>, Moscow University named after S.Y. Witte — 2024</p>
+<ul>
+<li>Developed ML models for processing student data</li>
+<li>Visualized key metrics using matplotlib</li>
+<li>Worked with Jupyter and pandas</li>
+</ul>
+</div>
+</div>
+<div class="section" id="projects">
+<h2>Проекты / Projects</h2>
+<div data-lang="ru">
+<ul>
+<li><strong><a href="https://github.com/xqbzz/sales-data-analysis" style="color:#38bdf8">Анализ продаж</a>:</strong> исследование сезонных трендов, EDA, визуализация</li>
+<li><strong><a href="https://github.com/xqbzz/image-classification-model" style="color:#38bdf8">Классификация изображений</a>:</strong> CNN, TensorFlow, точность 92%</li>
+<li><strong><a href="https://github.com/xqbzz/data-visualization-app" style="color:#38bdf8">Аналитическое веб-приложение</a>:</strong> Flask + интерактивные графики</li>
+<li><strong>AI Art Generator:</strong> генерация изображений по тексту на базе Stable Diffusion + PyQt</li>
+</ul>
+</div>
+<div data-lang="en">
+<ul>
+<li><strong><a href="https://github.com/xqbzz/sales-data-analysis" style="color:#38bdf8">Sales Data Analysis</a>:</strong> seasonal trends research, EDA, visualization</li>
+<li><strong><a href="https://github.com/xqbzz/image-classification-model" style="color:#38bdf8">Image Classification</a>:</strong> CNN, TensorFlow, 92% accuracy</li>
+<li><strong><a href="https://github.com/xqbzz/data-visualization-app" style="color:#38bdf8">Analytics Web App</a>:</strong> Flask + interactive charts</li>
+<li><strong>AI Art Generator:</strong> image generation from text based on Stable Diffusion + PyQt</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2>Обязанности / Responsibilities</h2>
+<div data-lang="ru">
+<ul>
+<li>Создание и валидация моделей</li>
+<li>Оптимизация пайплайнов</li>
+<li>Вёрстка и интеграция FastAPI-сервисов</li>
+<li>Автоматизация процессов обработки данных</li>
+</ul>
+</div>
+<div data-lang="en">
+<ul>
+<li>Model creation and validation</li>
+<li>Pipeline optimization</li>
+<li>FastAPI service layout and integration</li>
+<li>Automation of data processing workflows</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2>Ключевые достижения / Key Achievements</h2>
+<div data-lang="ru">
+<ul>
+<li>Победитель хакатона по анализу данных среди студентов</li>
+<li>Автор проекта AI Art Generator</li>
+<li>Закончил курс по Deep Learning от Stanford (CS231n)</li>
+</ul>
+</div>
+<div data-lang="en">
+<ul>
+<li>Winner of a student data analysis hackathon</li>
+<li>Creator of AI Art Generator project</li>
+<li>Completed Stanford Deep Learning course (CS231n)</li>
+</ul>
+</div>
+</div>
+<div class="section">
+<h2>Технологии / Technologies</h2>
+<div data-lang="ru">
+<ul>
+<li>Python, SQL, pandas, scikit-learn, FastAPI, Git</li>
+<li>TensorFlow, OpenCV, Docker, Jupyter, MongoDB</li>
+</ul>
+</div>
+<div data-lang="en">
+<ul>
+<li>Python, SQL, pandas, scikit-learn, FastAPI, Git</li>
+<li>TensorFlow, OpenCV, Docker, Jupyter, MongoDB</li>
+</ul>
+</div>
+</div>
+<div class="section" id="skills">
+<h2>Ключевые навыки / Key Skills</h2>
+<div data-lang="ru">
+<div class="skills-table">
+<div>
+<h3>Языки программирования</h3>
+<div class="skill-line"><span>Python</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>SQL</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>HTML/CSS</span><span class="stars">★★★☆☆</span></div>
+</div>
+<div>
+<h3>Инструменты и библиотеки</h3>
+<div class="skill-line"><span>pandas / NumPy</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>scikit-learn</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>matplotlib / seaborn</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>TensorFlow</span><span class="stars">★★★☆☆</span></div>
+</div>
+<div>
+<h3>ML и аналитика</h3>
+<div class="skill-line"><span>EDA и визуализация</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>Обработка данных</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Классификация / регрессия</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Работа с эмбеддингами</span><span class="stars">★★☆☆☆</span></div>
+</div>
+<div>
+<h3>Фреймворки и деплой</h3>
+<div class="skill-line"><span>FastAPI</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Flask</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Docker</span><span class="stars">★★☆☆☆</span></div>
+<div class="skill-line"><span>Git / GitHub</span><span class="stars">★★★☆☆</span></div>
+</div>
+</div>
+</div>
+<div data-lang="en">
+<div class="skills-table">
+<div>
+<h3>Programming Languages</h3>
+<div class="skill-line"><span>Python</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>SQL</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>HTML/CSS</span><span class="stars">★★★☆☆</span></div>
+</div>
+<div>
+<h3>Tools &amp; Libraries</h3>
+<div class="skill-line"><span>pandas / NumPy</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>scikit-learn</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>matplotlib / seaborn</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>TensorFlow</span><span class="stars">★★★☆☆</span></div>
+</div>
+<div>
+<h3>ML &amp; Analytics</h3>
+<div class="skill-line"><span>EDA &amp; Visualization</span><span class="stars">★★★★☆</span></div>
+<div class="skill-line"><span>Data Processing</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Classification / Regression</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Working with Embeddings</span><span class="stars">★★☆☆☆</span></div>
+</div>
+<div>
+<h3>Frameworks &amp; Deployment</h3>
+<div class="skill-line"><span>FastAPI</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Flask</span><span class="stars">★★★☆☆</span></div>
+<div class="skill-line"><span>Docker</span><span class="stars">★★☆☆☆</span></div>
+<div class="skill-line"><span>Git / GitHub</span><span class="stars">★★★☆☆</span></div>
+</div>
+</div>
+</div>
+</div>
+<footer>
+    © 2025 Баранов Сергей Иванович | Сделано с ❤️ и Python
   </footer>
-</body>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const ruTexts = document.querySelectorAll("[data-lang='ru']");
+  const enTexts = document.querySelectorAll("[data-lang='en']");
+  const langLinks = document.querySelectorAll(".lang");
+
+  function switchLang(lang) {
+    ruTexts.forEach(el => el.style.display = (lang === "ru") ? "block" : "none");
+    enTexts.forEach(el => el.style.display = (lang === "en") ? "block" : "none");
+  }
+
+  langLinks.forEach(link => {
+    link.addEventListener("click", (e) => {
+      e.preventDefault();
+      const selectedLang = e.target.textContent.toLowerCase();
+      switchLang(selectedLang);
+    });
+  });
+
+  switchLang("ru");
+});
+</script><script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll(".section").forEach(section => {
+  section.classList.add("fade-section");
+  observer.observe(section);
+});
+</script><script>
+document.addEventListener("DOMContentLoaded", function () {
+  const sections = {
+    projects: document.getElementById("projects"),
+    skills: document.getElementById("skills")
+  };
+  const navLinks = document.querySelectorAll(".main-nav a[href^='#']");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        navLinks.forEach(link => {
+          link.classList.toggle("active", link.getAttribute("href").slice(1) === entry.target.id);
+        });
+      }
+    });
+  }, {
+    threshold: 0.6
+  });
+
+  Object.values(sections).forEach(section => observer.observe(section));
+});
+</script></body>
 </html>
